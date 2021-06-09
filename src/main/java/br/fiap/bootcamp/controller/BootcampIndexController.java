@@ -26,15 +26,25 @@ public class BootcampIndexController {
 
 	@Autowired
 	BootcampService service;
-	
+
 	@ModelAttribute("user")
 	public User user() {
 		return new User();
 	}
 
 	@GetMapping("index")
-	public ModelAndView getIndexPage() {
+	public ModelAndView getHomePage() {
 		return new ModelAndView("index");
+	}
+	
+	@GetMapping("contact")
+	public ModelAndView getContactPage() {
+		return new ModelAndView("contact");
+	}
+	
+	@GetMapping("login")
+	public ModelAndView getLoginPage() {
+		return new ModelAndView("login");
 	}
 
 	@PostMapping("log")
@@ -47,34 +57,23 @@ public class BootcampIndexController {
 
 		if (user == null) {
 			boolean userInvalid = true;
-			model = new ModelAndView("redirect:/index");
+			model = new ModelAndView("redirect:/login");
 			redirectAttributes.addFlashAttribute("userInvalid", userInvalid);
 		} else {
-			if (user.getType().equalsIgnoreCase("admin")) {
-				model = new ModelAndView("redirect:/admin");
-			} else {
-				model = new ModelAndView("redirect:/common");
-			}
+			model = new ModelAndView("redirect:/list");
 			redirectAttributes.addFlashAttribute("user", user);
 		}
 		return model;
 	}
 
-	@GetMapping("admin")
-	public ModelAndView getAdminPage(@ModelAttribute("user") User user) {
-		ModelAndView model = new ModelAndView("admin");
+	@GetMapping("user")
+	public ModelAndView getUserPage(@ModelAttribute("user") User user) {
+		ModelAndView model = new ModelAndView("user");
 		model.addObject("user", user);
 		return model;
 	}
 
-	@GetMapping("common")
-	public ModelAndView getCommonPage(@ModelAttribute("user") User user) {
-		ModelAndView model = new ModelAndView("common");
-		model.addObject("user", user);
-		return model;
-	}
-
-	@RequestMapping(value = {"register_page", "register_page/{teacherId}"})
+	@PostMapping(value = {"register_page", "register_page/{teacherId}"})
 	@ResponseBody
 	public ModelAndView getRegisterPage(@PathVariable(required = false) Integer teacherId) {
 		ModelAndView model = new ModelAndView("register");
@@ -84,23 +83,28 @@ public class BootcampIndexController {
 			teacher = service.findTeacherById(teacherId);
 		}
 		model.addObject("teacher", teacher);
-		
+
 		return model;
 	}
 
-	@PostMapping(value = {"register", "register/{teacherId}"})
+	@PostMapping(value = { "register", "register/{teacherId}" })
 	@ResponseBody
-	public ModelAndView registerTeacher(@RequestParam MultiValueMap<String, String> body, @PathVariable(required = false, value = "teacherId") Integer teacherId, @ModelAttribute("user") User user) {
-		ModelAndView model = new ModelAndView("redirect:/" + user.getType());
-		
-		Teacher teacher = new Teacher(body.getFirst("name"), body.getFirst("subject"),
-				Double.parseDouble(body.getFirst("cost")), body.getFirst("email"), body.getFirst("phone"));
+	public ModelAndView registerTeacher(@RequestParam MultiValueMap<String, String> body,
+			@PathVariable(required = false, value = "teacherId") Integer teacherId) {		
+		ModelAndView model = new ModelAndView("redirect:/list");
+		String name = body.getFirst("name");
+		String subject = body.getFirst("subject");
+		Double cost = Double.parseDouble(body.getFirst("cost"));
+		String email = body.getFirst("email");
+		String phone = body.getFirst("phone");
+
+		Teacher teacher = new Teacher(name, subject, cost, email, phone);
 
 		if (teacherId != null) {
 			teacher.setTeacherId(teacherId);
 		}
 		service.registerTeacher(teacher);
-		
+
 		return model;
 	}
 
@@ -114,11 +118,9 @@ public class BootcampIndexController {
 
 	@RequestMapping("delete/{teacherId}")
 	@ResponseBody
-	public ModelAndView postDeletePage(@PathVariable("teacherId") Integer teacherId, @ModelAttribute("user") User user) {
-		ModelAndView model = new ModelAndView("redirect:/" + user.getType());
-		
+	public ModelAndView postDeletePage(@PathVariable("teacherId") Integer teacherId) {
+		ModelAndView model = new ModelAndView("redirect:/list");
 		service.deleteTeacher(teacherId);
-		
 		return model;
 	}
 }

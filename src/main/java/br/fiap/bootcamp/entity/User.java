@@ -16,17 +16,12 @@ public class User {
 	private String username;
 	@Column(name = "USER_PASSWORD")
 	private String password;
-	@Column(name = "USER_TYPE")
-	private String type;
 	
 	public String getUsername() {
 		return username;
 	}
 	public String getPassword() {
 		return password;
-	}
-	public String getType() {
-		return type;
 	}
 
 }

@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
 
-    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.0.1/css/bootstrap.min.css}">
 
     <!-- BOOTSTRAP -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.0.1/css/bootstrap.min.css}">
     <!-- DEVELOPMENT ONLY -->
 
 </head>
@@ -17,7 +16,7 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
         <div class="container-fluid col-11 col-md-10 col-lg-9 ">
-            <a class="navbar-brand" href="./index.html">
+            <a class="navbar-brand" href="/index">
                 <svg style="height: 1em;" viewBox="0 0 321.38 70.92"><defs><style>.cls-a{fill:#2df77e;}.cls-2{fill:#714fdb;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-a" d="M19.51,46.3,16,69.93H0L10.32,1H36.65Q48.43,1,54.92,7.31t5,16.36a24.53,24.53,0,0,1-9.64,16.6q-8,6-20.43,6ZM21.35,34H31.72A11.81,11.81,0,0,0,43.94,23.77q.66-4.74-1.61-7.6T34.8,13.3H24.48Z"/><path class="cls-a" d="M105.53,52.74q.61-4.22-1.8-6.27t-9.37-4.66q-12.27-4-18.37-9.57a14.78,14.78,0,0,1-4.83-14A18.66,18.66,0,0,1,80.08,4.9Q87.73,0,98.52,0q11.74,0,18.42,5.63t5,15.49l-.09.28H106.24a7.12,7.12,0,0,0-2.11-6.58,10.48,10.48,0,0,0-7.45-2.51,11.9,11.9,0,0,0-6.3,1.7,6,6,0,0,0-3.17,4.17q-.57,3.84,2.13,5.73t11.46,5q11.16,3.64,16.61,9.23t4.12,14.54a18.66,18.66,0,0,1-8.87,13.56q-7.51,4.71-18.59,4.71-11.35,0-19.24-5.16t-6-16l.09-.29H84.46c-.54,3.38.39,5.74,2.77,7.08a17.48,17.48,0,0,0,8.69,2,12.38,12.38,0,0,0,6.37-1.68A5.92,5.92,0,0,0,105.53,52.74Z"/><path class="cls-a" d="M152.11,69.93h-16l8.28-55.25H130.52l1.85-12.22L162.62,0Z"/><path class="cls-2" d="M224.54,19.7a17.23,17.23,0,0,1-4.14,8.83,22.79,22.79,0,0,1-8.64,6.08,15.14,15.14,0,0,1,7.62,6.18A14.41,14.41,0,0,1,221,50.61a21.06,21.06,0,0,1-9.44,15.08q-7.94,5.24-19.39,5.23a25.39,25.39,0,0,1-16-5.11q-6.6-5.12-4.9-14.73l.1-.28H187a6.38,6.38,0,0,0,1.42,5.66A7.27,7.27,0,0,0,194,58.61a11.89,11.89,0,0,0,7.37-2.41,8.93,8.93,0,0,0,3.71-5.92q.76-5.2-1.46-7.41t-7.11-2.2h-7.57l1-7.06.71-4.82h7.57a10.31,10.31,0,0,0,6.92-2.35A10.07,10.07,0,0,0,208.54,20,6.45,6.45,0,0,0,207,14.51q-2-2.2-6-2.2a8.86,8.86,0,0,0-5.37,1.8,6.81,6.81,0,0,0-2.86,4.64H177.24l-.09-.29A18.25,18.25,0,0,1,185.6,5,30.26,30.26,0,0,1,202.81,0q10.84,0,17,5.18T224.54,19.7Z"/><path class="cls-2" d="M270.11,52.74q.61-4.22-1.8-6.27t-9.37-4.66q-12.27-4-18.37-9.57a14.78,14.78,0,0,1-4.83-14A18.68,18.68,0,0,1,244.66,4.9Q252.31,0,263.11,0q11.73,0,18.41,5.63t5,15.49l-.09.28H270.82a7.14,7.14,0,0,0-2.1-6.58,10.5,10.5,0,0,0-7.46-2.51A11.9,11.9,0,0,0,255,14a6,6,0,0,0-3.17,4.17q-.57,3.84,2.13,5.73t11.46,5q11.17,3.64,16.62,9.23t4.12,14.54a18.7,18.7,0,0,1-8.88,13.56q-7.5,4.71-18.58,4.71-11.37,0-19.25-5.16t-6-16l.1-.29H249q-.79,5.07,2.77,7.08a17.5,17.5,0,0,0,8.69,2,12.35,12.35,0,0,0,6.37-1.68A5.92,5.92,0,0,0,270.11,52.74Z"/><path class="cls-2" d="M311.06,69.93h-16L305.42,1h16Z"/></g></g></svg>
             </a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,14 +26,14 @@
                 <div class="mx-auto">
                     <ul class="navbar-nav">
                         <li class="nav-item text-center">
-                            <a class="nav-link" aria-current="page" href="./index.html">Home</a>
+                            <a class="nav-link" aria-current="page" href="/index">Home</a>
                         </li>
                         <li class="nav-item text-center">
-                            <a class="nav-link" aria-current="page" href="./contact.html">Contato</a>
+                            <a class="nav-link" aria-current="page" href="/contact">Contato</a>
                         </li>
                     </ul>
                 </div>
-                <form action="./login.html">
+                <form action="/login">
                     <button type="submit" class="btn" style="color: #2df77e; background: none; font-weight: 600;">Login</button>
                 </form>
             </div>
@@ -43,7 +42,7 @@
     <!-- NAVBAR -->
 
     <div class="col-11 col-md-6 col-lg-4 mx-auto container-fluid">
-        <form th:action="${teacher.getTeacherId() != null} ? @{'/register/' + *{teacher.getTeacherId()}} : @{/register}" method="post" style="margin-top: 25%; background-color: #f4f4f4;" class=" border rounded shadow p-4">
+        <form th:action="${teacher.getTeacherId() != null} ? @{'/register/' + *{teacher.getTeacherId()}} : @{/register}" method="post" style="margin-top: 15%; background-color: #f4f4f4;" class=" border rounded shadow p-4">
             <div class="mb-3">
                 <label for="name" class="form-label">Nome</label>
                 <input type="text" class="form-control" id="name" name="name" required th:value="${teacher.getName()}?: ''">
@@ -54,7 +53,7 @@
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Endereço de Email</label>
-                <input type="email" class="form-control" name="_replyto" id="email" th:value="${teacher.getEmail()}?: ''" name="email" required>
+                <input type="email" class="form-control" id="email" th:value="${teacher.getEmail()}?: ''" name="email" required>
             </div>
             <div class="mb-3">
                 <label for="phone" class="form-label">Telefone</label>
@@ -75,12 +74,10 @@
     </div>
     <!-- FOOTER -->
 
-    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
-    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 
     <!-- BOOTSTRAP -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>    
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
     <!-- DEVELOPMENT ONLY -->
     
 </body>
