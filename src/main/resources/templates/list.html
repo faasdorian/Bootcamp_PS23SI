@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professores</title>
+
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.0.1/css/bootstrap.min.css}">
+    
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- DEVELOPMENT ONLY -->
+
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+        <div class="container-fluid col-11 col-md-10 col-lg-9 ">
+            <a class="navbar-brand" href="./index.html">
+                <svg style="height: 1em;" viewBox="0 0 321.38 70.92"><defs><style>.cls-a{fill:#2df77e;}.cls-2{fill:#714fdb;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-a" d="M19.51,46.3,16,69.93H0L10.32,1H36.65Q48.43,1,54.92,7.31t5,16.36a24.53,24.53,0,0,1-9.64,16.6q-8,6-20.43,6ZM21.35,34H31.72A11.81,11.81,0,0,0,43.94,23.77q.66-4.74-1.61-7.6T34.8,13.3H24.48Z"/><path class="cls-a" d="M105.53,52.74q.61-4.22-1.8-6.27t-9.37-4.66q-12.27-4-18.37-9.57a14.78,14.78,0,0,1-4.83-14A18.66,18.66,0,0,1,80.08,4.9Q87.73,0,98.52,0q11.74,0,18.42,5.63t5,15.49l-.09.28H106.24a7.12,7.12,0,0,0-2.11-6.58,10.48,10.48,0,0,0-7.45-2.51,11.9,11.9,0,0,0-6.3,1.7,6,6,0,0,0-3.17,4.17q-.57,3.84,2.13,5.73t11.46,5q11.16,3.64,16.61,9.23t4.12,14.54a18.66,18.66,0,0,1-8.87,13.56q-7.51,4.71-18.59,4.71-11.35,0-19.24-5.16t-6-16l.09-.29H84.46c-.54,3.38.39,5.74,2.77,7.08a17.48,17.48,0,0,0,8.69,2,12.38,12.38,0,0,0,6.37-1.68A5.92,5.92,0,0,0,105.53,52.74Z"/><path class="cls-a" d="M152.11,69.93h-16l8.28-55.25H130.52l1.85-12.22L162.62,0Z"/><path class="cls-2" d="M224.54,19.7a17.23,17.23,0,0,1-4.14,8.83,22.79,22.79,0,0,1-8.64,6.08,15.14,15.14,0,0,1,7.62,6.18A14.41,14.41,0,0,1,221,50.61a21.06,21.06,0,0,1-9.44,15.08q-7.94,5.24-19.39,5.23a25.39,25.39,0,0,1-16-5.11q-6.6-5.12-4.9-14.73l.1-.28H187a6.38,6.38,0,0,0,1.42,5.66A7.27,7.27,0,0,0,194,58.61a11.89,11.89,0,0,0,7.37-2.41,8.93,8.93,0,0,0,3.71-5.92q.76-5.2-1.46-7.41t-7.11-2.2h-7.57l1-7.06.71-4.82h7.57a10.31,10.31,0,0,0,6.92-2.35A10.07,10.07,0,0,0,208.54,20,6.45,6.45,0,0,0,207,14.51q-2-2.2-6-2.2a8.86,8.86,0,0,0-5.37,1.8,6.81,6.81,0,0,0-2.86,4.64H177.24l-.09-.29A18.25,18.25,0,0,1,185.6,5,30.26,30.26,0,0,1,202.81,0q10.84,0,17,5.18T224.54,19.7Z"/><path class="cls-2" d="M270.11,52.74q.61-4.22-1.8-6.27t-9.37-4.66q-12.27-4-18.37-9.57a14.78,14.78,0,0,1-4.83-14A18.68,18.68,0,0,1,244.66,4.9Q252.31,0,263.11,0q11.73,0,18.41,5.63t5,15.49l-.09.28H270.82a7.14,7.14,0,0,0-2.1-6.58,10.5,10.5,0,0,0-7.46-2.51A11.9,11.9,0,0,0,255,14a6,6,0,0,0-3.17,4.17q-.57,3.84,2.13,5.73t11.46,5q11.17,3.64,16.62,9.23t4.12,14.54a18.7,18.7,0,0,1-8.88,13.56q-7.5,4.71-18.58,4.71-11.37,0-19.25-5.16t-6-16l.1-.29H249q-.79,5.07,2.77,7.08a17.5,17.5,0,0,0,8.69,2,12.35,12.35,0,0,0,6.37-1.68A5.92,5.92,0,0,0,270.11,52.74Z"/><path class="cls-2" d="M311.06,69.93h-16L305.42,1h16Z"/></g></g></svg>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarNav">
+                <div class="mx-auto">
+                    <ul class="navbar-nav">
+                        <li class="nav-item text-center">
+                            <a class="nav-link" aria-current="page" href="./index.html">Home</a>
+                        </li>
+                        <li class="nav-item text-center">
+                            <a class="nav-link" aria-current="page" href="./contact.html">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+                <form action="./login.html">
+                    <button type="submit" class="btn" style="color: #2df77e; background: none; font-weight: 600;">Login</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- NAVBAR -->
+
+    <div style="height: 10vh;"></div>
+    <div class="container-fluid col-11 col-md-10 col-lg-9">
+        <div class="row">
+            <table class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Matéria</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Telefone</th>
+                        <th scope="col">Custo</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row"><p th:text="*{teachers[__${itemStat.index}__].getTeacherId()}"></p></th>
+                        <td><p th:text="*{teachers[__${itemStat.index}__].getName()}"></p></td>
+                        <td><p th:text="*{teachers[__${itemStat.index}__].getSubject()}"></p></td>
+                        <td><p th:text="*{teachers[__${itemStat.index}__].getEmail()}"></p></td>
+                        <td><p th:text="*{teachers[__${itemStat.index}__].getPhone()}"></p></td>
+                        <td><p th:text="*{teachers[__${itemStat.index}__].getCost()}"></p></td>
+                        <td style="width: 2em;">   
+                            <form class="me-4" th:action="@{'/register_page/'} + *{teachers[__${itemStat.index}__].getTeacherId()}" method="post">
+                                <button type="submit" class="btn" style="background: none;" name="editButton">
+                                    <svg class="p-1" style="height: 2em; color: #0C71E0;" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="pen-alt" role="img" viewBox="0 0 512 512" class="svg-inline--fa fa-pen-alt fa-w-16 fa-9x"><path fill="currentColor" d="M497.94 74.17l-60.11-60.11c-18.75-18.75-49.16-18.75-67.91 0l-56.55 56.55 128.02 128.02 56.55-56.55c18.75-18.75 18.75-49.15 0-67.91zm-246.8-20.53c-15.62-15.62-40.94-15.62-56.56 0L75.8 172.43c-6.25 6.25-6.25 16.38 0 22.62l22.63 22.63c6.25 6.25 16.38 6.25 22.63 0l101.82-101.82 22.63 22.62L93.95 290.03A327.038 327.038 0 0 0 .17 485.11l-.03.23c-1.7 15.28 11.21 28.2 26.49 26.51a327.02 327.02 0 0 0 195.34-93.8l196.79-196.79-82.77-82.77-84.85-84.85z" class=""></path></svg>
+                                </button>
+                            </form>
+                        </td>
+                        <td style="width: 2em;">        
+                            <form style="width: 2.3;" th:action="@{'/delete/'} + *{teachers[__${itemStat.index}__].getTeacherId()}" method="post">
+                                <button type="submit" class="btn" style="background: none;" name="deleteButton">
+                                    <svg class="p-1" style="height: 2em; color: #E84C3D;" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="trash-alt" role="img" viewBox="0 0 448 512" class="svg-inline--fa fa-trash-alt fa-w-14 fa-9x"><path fill="currentColor" d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z" class=""></path></svg>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <a href="./register.html" class="p-0 w-auto ms-auto">
+                <button type="button" style="width: 3.3em; background-color: #00AB66;" class="btn text-white ms-auto">
+                    <svg class="m-1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-plus fa-w-14 fa-9x"><path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg>
+                </button>
+            </a>
+        </div>
+    </div>
+
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    
+    <!-- BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>    
+    <!-- DEVELOPMENT ONLY -->
+    
+</body>
+</html>
