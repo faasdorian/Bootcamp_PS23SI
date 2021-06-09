@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Início</title>
+</head>
+<body>
+	<p th:if="${userInvalid}">Usuário inválido, tente novamente!</p>
+	<form action="/log" method="post">
+		<label><b>Username</b></label>
+		<input type="text" placeholder="Enter username" name="username" required>
+		<label><b>Password</b></label>
+		<input type="password" name="password" required>
+		<button type="submit" name="submit">Login</button>
+	</form>
+
+</body>
+</html>
